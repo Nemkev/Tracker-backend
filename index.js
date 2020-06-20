@@ -19,14 +19,22 @@ import {
   testPut,
 } from "./src/controllers/controllers";
 
-mongoose.connect("mongodb://localhost:27017/Evgeny", {
-  useFindAndModify: false,
-});
+mongoose.connect(
+  "mongodb+srv://Evgeny:Ntktajy1@eugene-gv2yj.mongodb.net/EvgenyJog",
+  {
+    useFindAndModify: false,
+  }
+);
 
 const app = express();
 app.use(bodyParser());
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:3000", "https://jog-client.herokuapp.com"],
+  })
+);
 
 app.post("/sync", authenticateToken, Sync);
 app.post("/v1/data/jog", authenticateToken, createJog);
