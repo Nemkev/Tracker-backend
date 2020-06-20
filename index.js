@@ -32,7 +32,7 @@ app.use(bodyParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://jog-client.herokuapp.com/",
+    origin: "https://jog-client.herokuapp.com",
   })
 );
 
