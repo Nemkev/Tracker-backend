@@ -32,7 +32,7 @@ app.use(bodyParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://jog-client.herokuapp.com",
+    origin: ["http://localhost:3000", "https://jog-client.herokuapp.com"],
   })
 );
 
@@ -52,7 +52,7 @@ app.put("/v1/test/echo", testPut);
 
 app.post("/login", login);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, function () {
   console.log("http://localhost:4000/");
