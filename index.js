@@ -52,6 +52,8 @@ app.put("/v1/test/echo", testPut);
 
 app.post("/login", login);
 
-app.listen(4000, function () {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, function () {
   console.log("http://localhost:4000/");
 });
